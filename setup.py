@@ -6,14 +6,16 @@ import os
 import glob
 from setuptools import setup, find_packages
 
+setup_dir = os.path.dirname(os.path.abspath(__file__))
+
 # Long description loaded from the README
-README = '/'.join(os.path.realpath(__file__).split('/')[:-1]) + '/README.rst'
+README = os.path.join(setup_dir, 'README.rst')
 
 # Get requirements
-REQUIREMENTS = '/'.join(os.path.realpath(__file__).split('/')[:-1]) + '/requirements.txt'
+REQUIREMENTS = os.path.join(setup_dir, 'requirements.txt')
 
 # Get __version__ from version.py without importing package itself.
-VERSION = '/'.join(os.path.realpath(__file__).split('/')[:-1]) + '/extinctions/version.py'
+VERSION = os.path.join(setup_dir, 'extinctions/version.py')
 
 # Package name
 NAME = 'extinctions'
